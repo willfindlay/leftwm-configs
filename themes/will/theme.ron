@@ -2,7 +2,7 @@
 
 (
     border_width: 2,
-    margin: 12,
+    margin: 6,
     default_border_color: "#000000",
     floating_border_color: "#a1a1a1",
     focused_border_color: "#1c6137",
