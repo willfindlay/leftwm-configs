@@ -29,7 +29,7 @@ do
   monitor=$(sed "$indextemp!d" <<<"$monitors")
   barname="mainbar$index"
   echo "$monitor -> $barname at $x to $width"
-  monitor=$monitor offset=$x width=$width polybar -c $SCRIPTPATH/polybar.config $barname &> /dev/null &
+  monitor=$monitor offset=$x width=$width polybar -c $SCRIPTPATH/polybar.config $barname 2> $HOME/.polybar.log &
   let index=indextemp
 done
 

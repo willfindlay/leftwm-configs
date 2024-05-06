@@ -34,7 +34,9 @@
         "Monocle",
     ],
     layout_definitions: [
-  (
+        (name: "CenterMain", flip: None, rotate: North, reserve: None, columns: (flip: None, rotate: North, main: (count: 1, size: 0.5, flip: None, rotate: North, split: Vertical), stack: (flip: None, rotate: North, split: None), second_stack: (flip: None, rotate: North, split: Horizontal))),
+        (name: "CenterMainFluid", flip: None, rotate: North, reserve: Reserve, columns: (flip: None, rotate: North, main: (count: 1, size: 0.5, flip: None, rotate: North, split: Vertical), stack: (flip: None, rotate: North, split: None), second_stack: (flip: None, rotate: North, split: Horizontal))),
+        (
             name: "RightMain",
             flip: None,
             rotate: North,
@@ -47,6 +49,9 @@
                 second_stack: None,
             )
         ),
+        (name: "Fibonacci", flip: None, rotate: North, reserve: None, columns: (flip: None, rotate: North, main: (count: 1, size: 0.5, flip: None, rotate: North, split: Vertical), stack: (flip: None, rotate: North, split: Fibonacci), second_stack: None)),
+        (name: "MainAndDeck", flip: None, rotate: North, reserve: None, columns: (flip: None, rotate: North, main: (count: 1, size: 0.5, flip: None, rotate: North, split: None), stack: (flip: None, rotate: North, split: None), second_stack: None)),
+        (name: "Monocle", flip: None, rotate: North, reserve: None, columns: (flip: None, rotate: North, main: None, stack: (flip: None, rotate: North, split: None), second_stack: None)),
     ],
     layout_mode: Tag,
     insert_behavior: Bottom,
@@ -59,6 +64,10 @@
         // Spawn 1password dialogs floating
         (window_class: "1password", spawn_floating: true),
 
+        // Spawn Zoom popups floating
+        (window_title: "^zoom$", spawn_floating: true),
+        (window_title: "^Settings$", spawn_floating: true),
+
         // Spawn Slack on tile 8
         (window_class: "slack", spawn_on_tag: 8),
         // Spawn Spotify on tile 9
@@ -70,6 +79,7 @@
     disable_tile_drag: false,
     disable_window_snap: true,
     focus_behaviour: Sloppy,
+    focus_on_activation: MarkUrgent,
     focus_new_windows: true,
     single_window_border: true,
     sloppy_mouse_follows_focus: false,
